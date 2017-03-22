@@ -263,6 +263,10 @@
                 var headers = {}
                     headers['Content-Type'] = 'text/xml; charset=utf-8';
 
+                if(callParams.soapAction){
+                    headers['SOAPAction'] = callParams.soapAction;
+                }
+
                 // custom headers
                 _.each(params.headers, (headerItem) => {
                     headers[headerItem.name] = headerItem.value
